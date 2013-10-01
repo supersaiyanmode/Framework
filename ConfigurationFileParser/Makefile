@@ -37,6 +37,7 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
+	$(shell mkdir -p $(shell dirname $(BIN)))
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
 
 
