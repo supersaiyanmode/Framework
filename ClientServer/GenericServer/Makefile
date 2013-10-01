@@ -12,7 +12,7 @@ INCPATH = -I include/
 LDFLAGS = 
 
 # Define the -l library name(s)
-LIBS = -Wall -pedantic -g -O3
+LIBS = -ldl -lpthread
 
 # Define Compile Flags
 COMPILEFLAGS = -Wall -pedantic -shared -fPIC
