@@ -15,7 +15,7 @@ LDFLAGS =
 LIBS = -Wall -pedantic -g -O3
 
 # Define Compile Flags
-COMPILEFLAGS = -Wall -pedantic
+COMPILEFLAGS = -Wall -pedantic -shared -fPIC
 
 # Define Link Flags
 LINKFLAGS = -shared -fPIC

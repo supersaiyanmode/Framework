@@ -15,7 +15,7 @@ LDFLAGS = -L../../ConfigurationFileParser/bin -L../../StringUtils/bin -L ../Gene
 LIBS = -lconfigparser -lstringutils -ltcpserver
 
 # Define Compile Flags
-COMPILEFLAGS = -Wall -pedantic
+COMPILEFLAGS = -Wall -pedantic -shared -fPIC
 
 # Define Link Flags
 LINKFLAGS = -shared -fPIC
