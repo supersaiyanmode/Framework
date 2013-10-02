@@ -102,7 +102,12 @@ int Socket::write(const std::vector<char>& vec){
 }
 
 int Socket::write(const std::string& str){
-    return write(&str[0], str.length());
+    try {
+        return write(&str[0], str.length());
+    } catch (SocketWriteException ex) {
+        std::cout<<"Exception: "<<ex.what()<<std::endl;
+        throw;
+    }
 }
 
 
