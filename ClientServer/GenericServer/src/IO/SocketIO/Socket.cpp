@@ -88,7 +88,7 @@ int Socket::write(const char* buf, int len){
         //EOF or error when <0
         if (res == 0) {
             setIOStatus(0,0);
-            throw SocketWriteException("Unable to write anything.");
+            return 0;
         } else {
             setIOStatus(-1,0);
             throw SocketWriteException("Error encountered while writing");
