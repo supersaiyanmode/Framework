@@ -15,10 +15,10 @@ LDFLAGS =
 LIBS = -ldl -lpthread
 
 # Define Compile Flags
-COMPILEFLAGS = -Wall -pedantic -shared -fPIC
+COMPILEFLAGS = -g -Wall -pedantic -shared -fPIC
 
 # Define Link Flags
-LINKFLAGS = -shared -fPIC
+LINKFLAGS = -g -shared -fPIC
 
 # Do not make any changes below!
 OBJS      = $(SRCS:.cpp=.o)

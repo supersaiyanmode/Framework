@@ -15,10 +15,10 @@ LDFLAGS = -L../../ConfigurationFileParser/bin -L../../StringUtils/bin -L ../Gene
 LIBS = -lconfigparser -lstringutils -ltcpserver
 
 # Define Compile Flags
-COMPILEFLAGS = -Wall -pedantic -shared -fPIC
+COMPILEFLAGS = -g -Wall -pedantic -shared -fPIC
 
 # Define Link Flags
-LINKFLAGS = -shared -fPIC
+LINKFLAGS = -g -shared -fPIC
 
 # Do not make any changes below!
 OBJS      = $(SRCS:.cpp=.o)

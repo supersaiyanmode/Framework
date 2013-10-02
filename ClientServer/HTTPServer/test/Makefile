@@ -18,7 +18,7 @@ LIBS = -ltcpserver -lhttpserver -lstringutils -lconfigparser
 COMPILEFLAGS = -g -Wall -pedantic
 
 # Define Link Flags
-LINKFLAGS = -pg -Wl,-rpath,../lib
+LINKFLAGS = -g -Wl,-rpath,../lib
 
 # Do not make any changes below!
 OBJS      = $(SRCS:.cpp=.o)
