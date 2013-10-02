@@ -71,7 +71,7 @@ void Socket::setIOStatus(int read, int write){ //-1 to retain state, 0/1 to set
     
     if (!writeActive && !readActive){
         state = CLOSED;
-        this->close();
+        close_(this->socket);
     }else
         state = IO_READY;
 }
@@ -86,11 +86,13 @@ int Socket::write(const char* buf, int len){
     int res = write_(this->socket, buf, len); 
     if (res < 0){
         //EOF or error when <0
-        setIOStatus(-1,0);
-        if (res == 0)
+        if (res == 0) {
+            setIOStatus(0,0);
             throw SocketWriteException("Unable to write anything.");
-        else
+        } else {
+            setIOStatus(-1,0);
             throw SocketWriteException("Error encountered while writing");
+        }
     }
     return res;
 }
@@ -110,11 +112,13 @@ int Socket::read(char* buf, int len){
     int res = read_(this->socket, buf, len);
     if (res <= 0){
         //EOF or error when <0
-        setIOStatus(0,-1);
-        if (res == 0)
-            throw SocketReadException("EOF Encountered");
-        else
+        if (res == 0){
+            setIOStatus(0,0);
+            return 0;
+        } else {
+            setIOStatus(0,-1);
             throw SocketReadException("Error encountered while reading");
+        }
     }
     return res;
 }
@@ -131,7 +135,13 @@ int Socket::read(std::vector<char>& vec, int len){
 int Socket::read(std::string& str, int len){
     std::vector<char> vec;
     vec.reserve(len);
-    int res = read(vec,len);
+    int res;
+    try{
+        res = read(vec,len);   
+    } catch (SocketException ex){
+        std::cout<<"Exception: "<<ex.what()<<std::endl;
+        throw;
+    }
     str = std::string(vec.begin(), vec.end());
     return res;
 }
@@ -148,7 +158,8 @@ int Socket::closeWriting(){
 }
 
 int Socket::close(){
-    return close_(this->socket);
+    setIOStatus(0,0);
+    return 0;
 }
 
 bool Socket::readable() const {

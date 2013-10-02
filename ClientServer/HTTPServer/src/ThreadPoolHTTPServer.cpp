@@ -27,6 +27,13 @@ void ThreadPoolHTTPServer::initialise() {
 }
 
 void ThreadPoolHTTPServer::onIncomingConnection(Connection c){
+    if (!c.readable()) {
+        std::cout<<"Got an unreadable connection.\n";
+        if (c.writable()) {
+            c.write(HTTPResponse(400, "Bad Request").str());
+        }
+            
+    }
     std::cout<<"Got an incoming connection from: "<<c.remoteAddressStr()<<std::endl;
     HTTPParser parser(c);
     if (!parser.parse()) {

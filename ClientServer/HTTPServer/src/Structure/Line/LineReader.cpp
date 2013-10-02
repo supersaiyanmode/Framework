@@ -26,9 +26,9 @@ std::string LineReader::readLine(){
         readStr.reserve(8192);
         while (true){
             readRes = connection.read(readStr, 8192);
-            if (readRes > 0)
+            if (readRes > 0) {
                 backBuffer += readStr;
-            else{
+            } else {
                 close();
                 ret = backBuffer;
                 backBuffer = "";

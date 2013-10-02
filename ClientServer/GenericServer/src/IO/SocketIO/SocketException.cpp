@@ -1,6 +1,6 @@
 #include "IO/SocketIO/SocketException.h"
 
-SocketException::SocketException(const std::string& str): IOException(str) {
+SocketException::SocketException(const std::string& str) : msg(str){
     
 }
 
@@ -13,7 +13,7 @@ const char* SocketException::what() const throw() {
 }
 
 
-SocketWriteException::SocketWriteException(const std::string& str):WriteException(str){
+SocketWriteException::SocketWriteException(const std::string& str):SocketException(str){
     
 }
 const char* SocketWriteException::what() const throw(){
@@ -25,7 +25,7 @@ SocketWriteException::~SocketWriteException() throw(){
 }
 
 
-SocketReadException::SocketReadException(const std::string& str):ReadException(str){
+SocketReadException::SocketReadException(const std::string& str):SocketException(str){
     
 }
 const char* SocketReadException::what() const throw(){

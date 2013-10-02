@@ -1,12 +1,11 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
-#include "../InputOutputCapable.h"
 #include "SocketException.h" //Not required per se, but allows for "SocketException" to be caught without extra headers
 #include "TCPSocket.h"
 #include <algorithm>
 
-class Connection : public InputOutputCapable {
+class Connection {
     TCPSocket socket;
     std::pair<std::string, int> localEndPoint, remoteEndPoint;
     std::string localAddressStr_, remoteAddressStr_;

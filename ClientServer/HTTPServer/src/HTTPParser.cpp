@@ -44,6 +44,10 @@ bool HTTPParser::parse() {
     LineReader lr(connection, "\r\n");
     
     std::string line = lr.readLine();
+    
+    if (!line.size())
+        return false;
+    
     std::vector<std::string> parts(StringUtils::splitAny(line, " "));
     parts[0] = StringUtils::toUpper(parts[0]);
     

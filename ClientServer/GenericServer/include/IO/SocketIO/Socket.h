@@ -17,7 +17,6 @@
 #include <vector>
 #include <string>
 #include "SocketException.h"
-#include "../InputOutputCapable.h"
 
 enum SocketState {
     UNINITIALISED,
@@ -26,7 +25,7 @@ enum SocketState {
     CLOSED
 };
 
-class Socket : public InputOutputCapable {
+class Socket {
     bool writeActive, readActive;
 protected:
     void setIOStatus(int=-1, int=-1);

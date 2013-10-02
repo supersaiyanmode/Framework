@@ -2,9 +2,10 @@
 #define SOCKET_EXCEPTION_H
 #include <exception>
 #include <string>
-#include "../InputOutputCapable.h"
 
-class SocketException : public IOException {
+class SocketException {
+protected:
+    std::string msg;
 public:
     SocketException(const std::string&);
     virtual ~SocketException() throw();
@@ -12,14 +13,14 @@ public:
     virtual const char* what() const throw();
 };
 
-class SocketWriteException: public WriteException {
+class SocketWriteException : public SocketException {
 public:
     SocketWriteException(const std::string&);
     virtual const char* what() const throw();
     virtual ~SocketWriteException() throw();
 };
 
-class SocketReadException: public ReadException {
+class SocketReadException : public SocketException {
 public:
     SocketReadException(const std::string&);
     virtual const char* what() const throw();
