@@ -38,8 +38,10 @@ void ThreadPoolHTTPServer::onIncomingConnection(Connection c){
     HTTPParser parser(c);
     if (!parser.parse()) {
         std::cout<<"Invalid HTTP Request.\n";
-        c.write(HTTPResponse(400, "Bad Request").str());
-        c.close();
+        if (c.writable()) {
+            c.write(HTTPResponse(400, "Bad Request").str());
+            c.close();
+        }
         return;
     }
     c.closeReading();
