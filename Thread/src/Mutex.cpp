@@ -1,4 +1,4 @@
-#include "Thread/Mutex.h"
+#include "Mutex.h"
 
 Mutex::Mutex() {
 #ifdef WIN32

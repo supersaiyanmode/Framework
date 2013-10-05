@@ -4,8 +4,8 @@
 #include <vector>
 
 #include "RequestProcessor.h"
-#include "../Thread/Thread.h"
-#include "../Thread/ThreadPool.h"
+#include "Thread.h"
+#include "ThreadPool.h"
 #include "../IO/SocketIO/Connection.h"
 
 class ThreadPoolRequestProcessor: public RequestProcessor {

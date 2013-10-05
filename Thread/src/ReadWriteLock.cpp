@@ -1,4 +1,4 @@
-#include "Thread/ReadWriteLock.h"
+#include "ReadWriteLock.h"
 
 ReadWriteLock::ReadWriteLock() {
 	lock = Mutex::createMutex();

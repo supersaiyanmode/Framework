@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "Thread/ThreadLogger.h"
-#include "Thread/Mutex.h"
+#include "ThreadLogger.h"
+#include "Mutex.h"
 
 Mutex* displayMutex = Mutex::createMutex();
 

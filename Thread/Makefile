@@ -1,24 +1,24 @@
 
 # Define executable name
-BIN = bin/libtcpserver.so
+BIN = bin/libthreadingutil.so
 
 # Define source files
-SRCS = ./src/BaseTCPServer.cpp ./src/IO/main.cpp ./src/IO/SocketIO/Connection.cpp ./src/IO/SocketIO/Socket.cpp ./src/IO/SocketIO/SocketException.cpp ./src/IO/SocketIO/TCPClientSocket.cpp ./src/IO/SocketIO/TCPServerSocket.cpp ./src/IO/SocketIO/TCPSocket.cpp ./src/Plugin.cpp ./src/RequestProcessors/ForkingRequestProcessor.cpp ./src/RequestProcessors/ThreadingRequestProcessor.cpp ./src/RequestProcessors/ThreadPoolRequestProcessor.cpp ./src/ServerSkeleton.cpp ./src/ThreadingTCPServer.cpp ./src/ThreadPoolTCPServer.cpp
+SRCS = ./src/Condition.cpp ./src/Mutex.cpp ./src/ReadWriteLock.cpp ./src/test/prodcons.cpp ./src/test/ThreadPoolTest.cpp ./src/test/ThreadTest.cpp ./src/Thread.cpp ./src/ThreadLogger.cpp
 
 # Define header file paths
-INCPATH = -I include/ -I ../../Thread/include -I ../../Time/include
+INCPATH = -I./include -I ../Time/include
 
 # Define the -L library path(s)
-LDFLAGS = -L ../../Thread/bin -L ../../Time/bin
+LDFLAGS = 
 
 # Define the -l library name(s)
-LIBS = -ldl -lpthread -lthreadingutil -ltimeutil
+LIBS = -lpthread
 
 # Define Compile Flags
-COMPILEFLAGS = -g -Wall -pedantic -shared -fPIC
+COMPILEFLAGS = -Wall -pedantic -shared -fPIC
 
 # Define Link Flags
-LINKFLAGS = -g -shared -fPIC
+LINKFLAGS = -shared -fPIC
 
 # Do not make any changes below!
 OBJS      = $(SRCS:.cpp=.o)

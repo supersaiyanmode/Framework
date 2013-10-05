@@ -1,4 +1,4 @@
-#include "Thread/Condition.h"
+#include "Condition.h"
 
 Condition::Condition(Mutex* m):mutex(m) {
 #ifdef WIN32

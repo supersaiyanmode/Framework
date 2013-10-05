@@ -2,7 +2,7 @@
 #define THREADING_REQUEST_PROCESSOR_H
 
 #include "RequestProcessor.h"
-#include "../Thread/Thread.h"
+#include "Thread.h"
 #include "../IO/SocketIO/Connection.h"
 #include <vector>
 

@@ -2,7 +2,7 @@
 #define CONDITION_LOCK_H
 
 #include "Mutex.h"
-#include "../Time/Time.h"
+#include "TimeUtil.h"
 
 class Condition {
 #ifdef WIN32

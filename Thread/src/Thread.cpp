@@ -1,5 +1,4 @@
-#include <iostream>
-#include "Thread/Thread.h"
+#include "Thread.h"
 
 
 void ThreadBase::sleep(int milli){

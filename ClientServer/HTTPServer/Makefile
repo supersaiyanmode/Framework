@@ -6,13 +6,17 @@ BIN = bin/libhttpserver.so
 SRCS = ./src/HTTPParser.cpp ./src/HTTPRequest.cpp ./src/HTTPResponse.cpp ./src/HTTPServiceMapper.cpp ./src/Plugin.cpp ./src/StaticFileHTTPEndPointHandler.cpp ./src/Structure/Block/BlockReader.cpp ./src/Structure/Block/BlockWriter.cpp ./src/Structure/Line/LineReader.cpp ./src/Structure/Line/LineWriter.cpp ./src/ThreadPoolHTTPServer.cpp ./test/main.cpp
 
 # Define header file paths
-INCPATH = -I../GenericServer/include -I../../ConfigurationFileParser/include -I../../StringUtils/include -Iinclude/
+INCPATH = -I../GenericServer/include -I../../ConfigurationFileParser/include -I../../StringUtils/include -Iinclude/ \
+			-I ../../Time/include -I ../../Thread/include
+
 
 # Define the -L library path(s)
-LDFLAGS = -L../../ConfigurationFileParser/bin -L../../StringUtils/bin -L ../GenericServer/bin
+LDFLAGS = -L../../ConfigurationFileParser/bin -L../../StringUtils/bin -L ../GenericServer/bin -L ../../Time/bin \
+			-L ../../Thread/bin
+
 
 # Define the -l library name(s)
-LIBS = -lconfigparser -lstringutils -ltcpserver
+LIBS = -lconfigparser -lstringutils -ltcpserver -lthreadingutil -ltimeutil
 
 # Define Compile Flags
 COMPILEFLAGS = -g -Wall -pedantic -shared -fPIC
@@ -37,7 +41,6 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
-	$(shell mkdir -p $(shell dirname $(BIN)))
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
 
 

@@ -3,15 +3,10 @@
 
 #include <ctime>
 #include <queue>
-#ifdef WIN32
-#include <windows.h>
-#else
-#include <pthread.h>
-#endif
 
 #include "Mutex.h"
 #include "Condition.h"
-#include "../Time/Time.h"
+#include "TimeUtil.h"
 
 template <typename T>
 class SynchronisedQueue {
