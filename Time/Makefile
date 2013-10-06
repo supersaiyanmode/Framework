@@ -3,7 +3,7 @@
 BIN = bin/libtimeutil.so
 
 # Define source files
-SRCS = ./src/Time.cpp
+SRCS = ./src/TimeUtil.cpp
 
 # Define header file paths
 INCPATH = -I./include
