@@ -3,7 +3,7 @@
 BIN = bin/libtcpserver.so
 
 # Define source files
-SRCS = ./src/BaseTCPServer.cpp ./src/IO/main.cpp ./src/IO/SocketIO/Connection.cpp ./src/IO/SocketIO/Socket.cpp ./src/IO/SocketIO/SocketException.cpp ./src/IO/SocketIO/TCPClientSocket.cpp ./src/IO/SocketIO/TCPServerSocket.cpp ./src/IO/SocketIO/TCPSocket.cpp ./src/Plugin.cpp ./src/RequestProcessors/ForkingRequestProcessor.cpp ./src/RequestProcessors/ThreadingRequestProcessor.cpp ./src/RequestProcessors/ThreadPoolRequestProcessor.cpp ./src/ServerSkeleton.cpp ./src/ThreadingTCPServer.cpp ./src/ThreadPoolTCPServer.cpp
+SRCS = ./src/BaseTCPServer.cpp ./src/IO/main.cpp ./src/IO/SocketIO/Connection.cpp ./src/IO/SocketIO/Socket.cpp ./src/IO/SocketIO/SocketException.cpp ./src/IO/SocketIO/TCPClientSocket.cpp ./src/IO/SocketIO/TCPServerSocket.cpp ./src/IO/SocketIO/TCPSocket.cpp ./src/IO/Structure/Block/BlockReader.cpp ./src/IO/Structure/Block/BlockWriter.cpp ./src/IO/Structure/Line/LineReader.cpp ./src/IO/Structure/Line/LineWriter.cpp ./src/Plugin.cpp ./src/RequestProcessors/ForkingRequestProcessor.cpp ./src/RequestProcessors/ThreadingRequestProcessor.cpp ./src/RequestProcessors/ThreadPoolRequestProcessor.cpp ./src/ServerSkeleton.cpp ./src/ThreadingTCPServer.cpp ./src/ThreadPoolTCPServer.cpp
 
 # Define header file paths
 INCPATH = -I include/ -I ../../Thread/include -I ../../Time/include

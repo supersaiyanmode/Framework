@@ -4,8 +4,8 @@
 #include <sstream>
 
 #include "HTTPParser.h"
-#include "Structure/Line/LineReader.h"
-#include "Structure/Block/BlockReader.h"
+#include "IO/Structure/Line/LineReader.h"
+#include "IO/Structure/Block/BlockReader.h"
 #include "StringUtils.h"
 
 std::string HTTPParser::decodeURIComponent(std::string in) {

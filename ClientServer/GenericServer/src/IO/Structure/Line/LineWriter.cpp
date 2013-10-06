@@ -1,4 +1,4 @@
-#include "LineWriter.h"
+#include "IO/Structure/Line/LineWriter.h"
 
 LineWriter::LineWriter(Connection& dv, std::string d):
         connection(dv), delim(d) {

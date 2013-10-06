@@ -3,7 +3,7 @@
 BIN = bin/libhttpserver.so
 
 # Define source files
-SRCS = ./src/HTTPParser.cpp ./src/HTTPRequest.cpp ./src/HTTPResponse.cpp ./src/HTTPServiceMapper.cpp ./src/Plugin.cpp ./src/StaticFileHTTPEndPointHandler.cpp ./src/Structure/Block/BlockReader.cpp ./src/Structure/Block/BlockWriter.cpp ./src/Structure/Line/LineReader.cpp ./src/Structure/Line/LineWriter.cpp ./src/ThreadPoolHTTPServer.cpp ./test/main.cpp
+SRCS = ./src/HTTPParser.cpp ./src/HTTPRequest.cpp ./src/HTTPResponse.cpp ./src/HTTPServiceMapper.cpp ./src/Plugin.cpp ./src/StaticFileHTTPEndPointHandler.cpp ./src/ThreadPoolHTTPServer.cpp ./test/main.cpp
 
 # Define header file paths
 INCPATH = -I../GenericServer/include -I../../ConfigurationFileParser/include -I../../StringUtils/include -Iinclude/ \

@@ -1,5 +1,7 @@
-#include "LineReader.h"
 #include <iostream>
+
+#include "IO/Structure/Line/LineReader.h"
+
 LineReader::LineReader(Connection& dv, std::string d):
         connection(dv), delim(d){
     

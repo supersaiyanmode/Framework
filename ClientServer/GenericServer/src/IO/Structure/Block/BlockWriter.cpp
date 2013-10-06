@@ -1,4 +1,4 @@
-#include "BlockWriter.h"
+#include "IO/Structure/Block/BlockWriter.h"
 
 BlockWriter::BlockWriter(Connection& d):connection(d) {
     

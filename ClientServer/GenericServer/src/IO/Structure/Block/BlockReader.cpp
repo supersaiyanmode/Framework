@@ -1,5 +1,7 @@
-#include "BlockReader.h"
 #include <iostream>
+
+#include "IO/Structure/Block/BlockReader.h"
+
 BlockReader::BlockReader(Connection& conn, const std::string& bb):
         backBuffer(bb), connection(conn){
     
