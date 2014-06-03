@@ -11,8 +11,7 @@ class HTTPResponse {
     
     std::map<std::string, std::string> m_headers;
     std::string m_body;
-    
-    bool m_valid;
+	
 public:
     HTTPResponse();
     HTTPResponse(int, const std::string& = "");

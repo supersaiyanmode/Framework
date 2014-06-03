@@ -31,7 +31,7 @@ class MyCMSServer: public CMSServer {
 public:
     MyCMSServer(int p): CMSServer(p){
         CMSServer::initialise();
-        thread = Thread<MyCMSServer, int>::createThread(this, &MyCMSServer::serve);
+        thread = Thread<MyCMSServer, int>::createThread(this, &MyCMSServer::run);
         thread->start(0);
     }
     
@@ -54,7 +54,7 @@ public:
         return true;
     }
     
-    void serve(int){
+    void run(int){
         CMSServer::serve();
     }
 };

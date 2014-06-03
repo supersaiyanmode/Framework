@@ -1,5 +1,5 @@
 #Below variable declarations will be maintained in all future Makefiles generated
-LIBS=
+LIBS=-lpthread
 CPPCOMPILER=g++
 CCOMPILER=gcc
 COMPILEFLAGS=-Wall -g -O3
@@ -9,7 +9,7 @@ DEFINES=ADDER_TEST
 PREPROCESSORDEFINES=$(patsubst %,-D%,$(DEFINES))
 
 all : obj/main.o obj/Plugin.o 
-	$(CPPCOMPILER) $(COMPILEFLAGS) obj/main.o obj/Plugin.o $(LIBS)
+	$(CPPCOMPILER) $(COMPILEFLAGS) $(LIBS) obj/main.o obj/Plugin.o
 
 obj/main.o : main.cpp  \
 		SamplePlugin/AdderPlugin/AdderPlugin.h \

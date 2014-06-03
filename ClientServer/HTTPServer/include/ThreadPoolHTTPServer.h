@@ -11,8 +11,6 @@
 class ThreadPoolHTTPServer : public ThreadPoolTCPServer,
                             public HTTPServiceMapper, public TCPServerConnectionHandler {
     int port;
-    int workers;
-    int queueSize;
     
     ConfigurationFile configuration;
 public:

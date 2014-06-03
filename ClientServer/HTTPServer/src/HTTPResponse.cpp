@@ -3,10 +3,10 @@
 
 const std::string HTTPResponse::m_version = "HTTP/1.0";
 
-HTTPResponse::HTTPResponse(): m_statusCode(200), m_phrase("OK"), m_valid(true) {}
+HTTPResponse::HTTPResponse(): m_statusCode(200), m_phrase("OK") {}
 
 HTTPResponse::HTTPResponse(int code, const std::string& phrase):
-        m_statusCode(code), m_phrase(phrase), m_valid(true) {
+        m_statusCode(code), m_phrase(phrase) {
     
 }
 

@@ -5,8 +5,7 @@
 #include "HTTPParser.h"
 
 ThreadPoolHTTPServer::ThreadPoolHTTPServer(int p, int w, int q): ThreadPoolTCPServer(p,this,w,q),
-                    port(p), workers(w), queueSize(q),
-                    configuration("http.config") {
+                    port(p), configuration("http.config") {
 }
 
 ThreadPoolHTTPServer::~ThreadPoolHTTPServer() {
