@@ -13,27 +13,41 @@ public:
     JSONPrimitive(const T& val) : value(val){
         
     }
-    const T& get() {
+    const T& get() const {
         return value;
     }
     
     std::string str() const;
     JsonDataType getType() const;
     
-    ~JSONPrimitive() {
+	const JSONBase& operator[](const std::string&) const {
+	    throw JSONException("Access by key for a primitive.");
+	}
+	virtual JSONBase& operator[](const std::string&) {
+	    throw JSONException("Access by key for a primitive.");
+	}
+	
+	virtual const JSONBase& operator[](unsigned int) const {
+	    throw JSONException("Access by key for a primitive.");
+	}
+	virtual JSONBase& operator[](unsigned int) {
+	    throw JSONException("Access by key for a primitive.");
+	}
+	
+    virtual ~JSONPrimitive() {
         
     }
 };
 
 template<typename T>
-std::string JSONPrimitive<T>::str() const {
+inline std::string JSONPrimitive<T>::str() const {
     std::stringstream ss;
     ss<<value;
     return ss.str();
 }
 
 template<>
-std::string JSONPrimitive<std::string>::str() const {
+inline std::string JSONPrimitive<std::string>::str() const {
     std::stringstream ss;
     ss<<'\"';
     ss<<value;
@@ -42,12 +56,12 @@ std::string JSONPrimitive<std::string>::str() const {
 }
 
 template<>
-JsonDataType JSONPrimitive<int>::getType() const {
+inline JsonDataType JSONPrimitive<int>::getType() const {
     return JSON_INTEGER;
 }
 
 template<>
-JsonDataType JSONPrimitive<std::string>::getType() const {
+inline JsonDataType JSONPrimitive<std::string>::getType() const {
     return JSON_STRING;
 }
 /*

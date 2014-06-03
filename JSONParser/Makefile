@@ -3,7 +3,7 @@
 BIN = a.out
 
 # Define source files
-SRCS = ./src/JSONArray.cpp ./src/JSONObject.cpp ./src/JSONParser.cpp
+SRCS = ./src/JSON.cpp ./src/JSONArray.cpp ./src/JSONObject.cpp ./src/JSONParser.cpp ./test/main.cpp
 
 # Define header file paths
 INCPATH = -I./include

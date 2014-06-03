@@ -17,7 +17,14 @@ public:
 	
 	std::string str() const;
 	
+	const JSONBase& operator[](const std::string&) const;
+	virtual JSONBase& operator[](const std::string&);
 	
+	virtual const JSONBase& operator[](unsigned int) const;
+	virtual JSONBase& operator[](unsigned int);
+	
+	virtual const std::map<std::string, JSONBase*>& get() const;
+		
 	~JSONObject();
 };
 
