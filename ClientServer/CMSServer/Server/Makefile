@@ -18,7 +18,7 @@ LDFLAGS = -L../../../ConfigurationFileParser/bin -L../../../StringUtils/bin -L .
 LIBS = -lconfigparser -lstringutils -ltcpserver -lthreadingutil -ltimeutil -lrandomutil
 
 # Define Compile Flags
-COMPILEFLAGS = -Wall -pedantic -shared -fPIC
+COMPILEFLAGS = -Wall -pedantic -fPIC
 
 # Define Link Flags
 LINKFLAGS = -g -shared -fPIC

@@ -15,7 +15,7 @@ LDFLAGS = -L ../StringUtils/bin
 LIBS = -lstringutils
 
 # Define Compile Flags
-COMPILEFLAGS = -g -Wall -pedantic -shared -fPIC
+COMPILEFLAGS = -g -Wall -pedantic -fPIC
 
 # Define Link Flags
 LINKFLAGS = -g -shared -fPIC

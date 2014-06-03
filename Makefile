@@ -9,7 +9,8 @@ all: $(MY_TARGETS)
 all: $(MY_TARGETS)
 	
 $(MY_TARGETS):
-	echo "Making $@"
+	@echo ""
+	@echo "   *** Making $@ ***"
 	@$(MAKE) -C $@;
 	
 clean:

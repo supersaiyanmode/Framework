@@ -17,7 +17,7 @@ LDFLAGS = -L ../Server/bin -L ../../GenericServer/bin -L ../../../Random/bin -L 
 LIBS = -lcmsserver -ltcpserver -lrandomutil -lthreadingutil -ltimeutil
 
 # Define Compile Flags
-COMPILEFLAGS = -Wall -pedantic -shared -fPIC 
+COMPILEFLAGS = -Wall -pedantic -fPIC 
 
 # Define Link Flags
 LINKFLAGS = -shared -fPIC 

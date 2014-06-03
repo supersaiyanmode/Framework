@@ -15,7 +15,7 @@ LDFLAGS = -L ../../Thread/bin -L ../../Time/bin
 LIBS = -ldl -lpthread -lthreadingutil -ltimeutil
 
 # Define Compile Flags
-COMPILEFLAGS = -g -Wall -pedantic -shared -fPIC
+COMPILEFLAGS = -g -Wall -pedantic -fPIC
 
 # Define Link Flags
 LINKFLAGS = -g -shared -fPIC
