@@ -1,4 +1,4 @@
-MY_TARGETS = Time/ Thread/ StringUtils/ Random/ OptParse/ ConfigurationFileParser/ \
+MY_TARGETS = Time/ Thread/ StringUtils/ Random/ OptParse/ ConfigurationFileParser/ JSONParser/ \
 			ClientServer/GenericServer/ ClientServer/HTTPServer ClientServer/CMSServer/Server \
 			ClientServer/CMSServer/Client ClientServer/CMSServer/Test
 
