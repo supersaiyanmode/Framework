@@ -152,7 +152,7 @@ int main(int argc, char ** argv){
             parser.displayHelp();
             return 1;
         }
-        std::stringstream ss(parser["port"]);
+        std::stringstream ss(split[1]);
         int port;
         if (!(ss>>port) && port > 65535) {
             std::cout<<"Not a valid port number.\n";

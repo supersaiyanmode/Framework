@@ -29,3 +29,4 @@ inline std::string& CMSHeaderSet::operator[](const std::string& h) {
     return headers[h];
 }
 #endif
+

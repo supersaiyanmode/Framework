@@ -26,3 +26,4 @@ inline std::string CMSDestination::str() {
 }
 
 #endif
+
