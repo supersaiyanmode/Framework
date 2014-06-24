@@ -2,3 +2,4 @@
 .depend
 *.so
 a.out
+*/build/*
