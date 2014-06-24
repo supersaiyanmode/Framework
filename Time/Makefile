@@ -1,6 +1,6 @@
 
 # Define executable name
-BIN = bin/libtimeutil.so
+BIN = build/libtimeutil.so
 
 # Define source files
 SRCS = ./src/TimeUtil.cpp
@@ -36,9 +36,10 @@ all: depend $(BIN)
 # For linking object file(s) to produce the executable
 #
 $(BIN): $(OBJS)
+	mkdir -p build/include
 	@echo Linking $@
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
-
+	@cp -R include build/.
 
 # For compiling source file(s)
 #
@@ -50,7 +51,7 @@ $(BIN): $(OBJS)
 # For cleaning up the project
 #
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BIN)
 
 distclean: clean
 	$(RM) $(BIN)
