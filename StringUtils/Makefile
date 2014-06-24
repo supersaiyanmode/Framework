@@ -1,6 +1,6 @@
 
 # Define executable name
-BIN = bin/libstringutils.so
+BIN = build/libstringutils.so
 
 # Define source files
 SRCS = ./src/StringUtils.cpp
@@ -37,9 +37,9 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
-	$(shell mkdir -p $(shell dirname $(BIN)))
+	@mkdir -p build/include
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
-
+	@cp -R include build/.
 
 # For compiling source file(s)
 #

@@ -1,6 +1,6 @@
 
 # Define executable name
-BIN = bin/librandomutil.so
+BIN = build/librandomutil.so
 
 # Define source files
 SRCS = ./src/Sequential.cpp
@@ -37,8 +37,9 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
+	@mkdir -p build/include
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
-
+	@cp -R include build/.
 
 # For compiling source file(s)
 #
