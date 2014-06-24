@@ -1,6 +1,6 @@
 
 # Define executable name
-BIN = bin/libthreadingutil.so
+BIN = build/libthreadingutil.so
 
 # Define source files
 SRCS = ./src/Condition.cpp ./src/Mutex.cpp ./src/ReadWriteLock.cpp ./src/test/prodcons.cpp ./src/test/ThreadPoolTest.cpp ./src/test/ThreadTest.cpp ./src/Thread.cpp ./src/ThreadLogger.cpp
@@ -37,7 +37,9 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
+	@mkdir -p build/include
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
+	@cp -R include build/. 
 
 
 # For compiling source file(s)
