@@ -1,15 +1,15 @@
-
+FRAMEWORK_BASE = /Users/srivatsan/Code/Framework
 # Define executable name
-BIN = bin/libconfigparser.so
+BIN = build/libconfigparser.so
 
 # Define source files
 SRCS = ./src/ConfigurationFileParser.cpp
 
 # Define header file paths
-INCPATH = -I ./include -I ../StringUtils/include
+INCPATH = -I ./include -I $(FRAMEWORK_BASE)/StringUtils/include
 
 # Define the -L library path(s)
-LDFLAGS = -L ../StringUtils/bin
+LDFLAGS = -L $(FRAMEWORK_BASE)/StringUtils/build
 
 # Define the -l library name(s)
 LIBS = -lstringutils
@@ -39,7 +39,7 @@ $(BIN): $(OBJS)
 	@echo Linking $@
 	$(shell mkdir -p $(shell dirname $(BIN)))
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
-
+	@cp -R include build
 
 # For compiling source file(s)
 #

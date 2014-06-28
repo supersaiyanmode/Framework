@@ -1,6 +1,6 @@
 
 # Define executable name
-BIN = bin/liboptparse.so
+BIN = build/liboptparse.so
 
 # Define source files
 SRCS = ./src/OptParse.cpp
@@ -37,8 +37,9 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
+	@mkdir -p build/include
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
-
+	@cp -R include build/.
 
 # For compiling source file(s)
 #
