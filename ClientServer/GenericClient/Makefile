@@ -1,40 +1,40 @@
-FRAMEWORK_BASE = /Users/srivatsan/Code/Framework
-GENERIC_CLIENT = $(FRAMEWORK_BASE)/ClientServer/GenericClient
 
 # Define executable name
-BIN = build/libtcpserver.so
+BIN = build/libgenericclient.so
 
 # Define source files
-SRCS = ./src/BaseTCPServer.cpp \
-		./src/RequestProcessors/ForkingRequestProcessor.cpp \
-		./src/RequestProcessors/ThreadingRequestProcessor.cpp \
-		./src/RequestProcessors/ThreadPoolRequestProcessor.cpp \
-		./src/ServerSkeleton.cpp \
-		./src/ThreadingTCPServer.cpp \
-		./src/ThreadPoolTCPServer.cpp
+SRCS = ./src/SocketIO/Connection.cpp \
+		./src/SocketIO/Socket.cpp \
+		./src/SocketIO/SocketException.cpp \
+		./src/SocketIO/TCPClientSocket.cpp \
+		./src/SocketIO/TCPServerSocket.cpp \
+		./src/SocketIO/TCPSocket.cpp \
+		./src/Structure/Block/BlockReader.cpp \
+		./src/Structure/Block/BlockWriter.cpp \
+		./src/Structure/Line/LineReader.cpp \
+		./src/Structure/Line/LineWriter.cpp
+		
+TEST_SRCS = ./test/main.cpp
 
 # Define header file paths
-INCPATH = -I include/ \
-	 		-I $(FRAMEWORK_BASE)/Thread/include \
-			-I $(FRAMEWORK_BASE)/Time/include \
-			-I $(GENERIC_CLIENT)/include
+INCPATH = -I./include
 
 # Define the -L library path(s)
-LDFLAGS = -L $(FRAMEWORK_BASE)/Thread/build \
-	 		-L $(FRAMEWORK_BASE)/Time/build \
-			-L $(GENERIC_CLIENT)/build
+LDFLAGS = 
 
 # Define the -l library name(s)
-LIBS = -ldl -lpthread -lthreadingutil -ltimeutil -lgenericclient
+LIBS = 
 
 # Define Compile Flags
-COMPILEFLAGS = -g -Wall -pedantic -fPIC
+COMPILEFLAGS = -Wall -pedantic
 
 # Define Link Flags
-LINKFLAGS = -g -shared -fPIC
+LINKFLAGS = -shared -fPIC
 
 # Do not make any changes below!
 OBJS      = $(SRCS:.cpp=.o)
+TEST_OBJS = $(TEST_SRCS:.cpp=.o)
+
 CXX       = g++
 DEP_FILE  = .depend
 
@@ -48,11 +48,11 @@ all: depend $(BIN)
 
 # For linking object file(s) to produce the executable
 #
-$(BIN): $(OBJS)
+$(BIN): $(OBJS) $(TEST_OBJS)
 	@echo Linking $@
 	@mkdir -p build/include
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
-	@cp -R include build/
+	@cp -R include build/.
 
 # For compiling source file(s)
 #

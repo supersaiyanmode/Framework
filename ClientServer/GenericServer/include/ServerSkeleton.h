@@ -1,7 +1,7 @@
 #ifndef SERVER_SKELETON_H
 #define SERVER_SKELETON_H
 
-#include "IO/SocketIO/TCPServerSocket.h"
+#include "SocketIO/TCPServerSocket.h"
 
 class ServerSkeleton {
 protected:

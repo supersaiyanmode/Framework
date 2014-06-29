@@ -3,7 +3,7 @@
 
 #include "RequestProcessor.h"
 #include "Thread.h"
-#include "../IO/SocketIO/Connection.h"
+#include "SocketIO/Connection.h"
 #include <vector>
 
 

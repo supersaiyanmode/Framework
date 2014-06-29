@@ -6,7 +6,7 @@
 #include "RequestProcessor.h"
 #include "Thread.h"
 #include "ThreadPool.h"
-#include "../IO/SocketIO/Connection.h"
+#include "SocketIO/Connection.h"
 
 class ThreadPoolRequestProcessor: public RequestProcessor {
     bool active;
