@@ -1,6 +1,5 @@
 MY_TARGETS = Time/ Thread/ StringUtils/ Random/ OptParse/ ConfigurationFileParser/ JSONParser/ \
-			ClientServer/GenericServer/ ClientServer/HTTPServer ClientServer/CMSServer/Server \
-			ClientServer/CMSServer/Client ClientServer/CMSServer/Test
+			ClientServer/GenericClient/ ClientServer/GenericServer/
 
 .PHONY: all $(MY_TARGETS)
 all: $(MY_TARGETS)
