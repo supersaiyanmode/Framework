@@ -1,4 +1,4 @@
-
+FRAMEWORK_BASE = /Users/srivatsan/Code/Framework
 # Define executable name
 BIN = build/librandomutil.so
 
@@ -9,7 +9,7 @@ SRCS = ./src/Sequential.cpp
 INCPATH = -I./include -I ../Thread/include
 
 # Define the -L library path(s)
-LDFLAGS = -L ../Thread/bin
+LDFLAGS = -L $(FRAMEWORK_BASE)/Thread/build
 
 # Define the -l library name(s)
 LIBS = -lthreadingutil
