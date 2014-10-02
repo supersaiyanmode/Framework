@@ -1,4 +1,4 @@
-FRAMEWORK_BASE = /Users/srivatsan/Code/Framework
+FRAMEWORK_BASE = ..
 # Define executable name
 BIN = build/libconfigparser.so
 

@@ -1,4 +1,4 @@
-FRAMEWORK_BASE = /Users/srivatsan/Code/Framework
+FRAMEWORK_BASE = ../..
 GENERIC_CLIENT = $(FRAMEWORK_BASE)/ClientServer/GenericClient
 
 # Define executable name
@@ -50,7 +50,7 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
-	@mkdir -p build/include
+	@mkdir -p build/
 	@$(CXX) $(LINKFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
 	@cp -R include build/
 
