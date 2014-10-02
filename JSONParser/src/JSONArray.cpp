@@ -1,4 +1,5 @@
 #include <sstream>
+#include <iterator>
 
 #include "datatype/JSONArray.h"
 
@@ -9,7 +10,7 @@ std::string JSONArray::str() const {
 	for (std::vector<JSONBase*>::const_iterator it=array.begin();
 			it != array.end(); it++) {
 		ss<<(*it)->str();
-		if (std::next(it) != array.end())
+		if (&*it != &*array.rbegin())
 			ss<<", ";
 	}
 	ss<<"]";

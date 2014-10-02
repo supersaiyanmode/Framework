@@ -9,7 +9,7 @@ std::string JSONObject::str() const {
 	for (std::map<std::string, JSONBase*>::const_iterator it=dictionary.begin();
 			it != dictionary.end(); it++) {
 		ss<<'\"'<<it->first<<"\": "<<it->second->str();
-		if (std::next(it) != dictionary.end())
+		if (&*it != &*dictionary.rbegin())
 			ss<<", ";
 	}
 	ss<<"}";
